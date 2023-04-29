@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+testing {
+    suites {
+        test {
+            useJUnit('4.13.2')
+        }
+    }
+}
+
+application {
+    mainClass = 'MaxValueSimpleTest.App'
+}
+
