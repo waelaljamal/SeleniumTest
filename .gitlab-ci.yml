@@ -1,0 +1,4 @@
+run_unit_test:
+    stage: test
+    script:
+        - gradle test
