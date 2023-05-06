@@ -32,7 +32,6 @@ public class RectangleTest {
         assertEquals("isSquare for a != b, 2 != 3", false, rect.isSquare());
         //System.out.println("isSquare: " + Boolean.toString(rect.isSquare()));
 
-        
         // update edges lengths - test setters && getters
         rect.setA(5);
         rect.setB(5);
@@ -42,31 +41,29 @@ public class RectangleTest {
         // a = 5, b = 5 test isSquare with  equal edges
         //System.out.println("isSquare: " + Boolean.toString(rect.isSquare()));
         assertEquals("isSquare for a = b, 5 = 5", true, rect.isSquare());
-        
    }
 
-   @Test(expected = RectangleException.class)
+    // exceptions testing
+    // create a rect object with invalid lengths
+
+    @Test(expected = RectangleException.class)
     public void baseRectangleTests_invalid_length_1() throws RectangleException {
 
-        // create a rect object with invalid lengths
         Rectangle rect = new Rectangle(0, 3);
     }
     @Test(expected = RectangleException.class)
     public void baseRectangleTests_invalid_length_2() throws RectangleException {
 
-        // create a rect object with invalid lengths
         Rectangle rect = new Rectangle(3, 0);
+    }
+    @Test(expected = RectangleException.class)
+    public void baseRectangleTests_invalid_length_3() throws RectangleException {
+
+        Rectangle rect = new Rectangle(-6, 3);
     }
     @Test(expected = RectangleException.class)
     public void baseRectangleTests_invalid_length_4() throws RectangleException {
 
-        // create a rect object with invalid lengths
-        Rectangle rect = new Rectangle(-6, 3);
-    }
-    @Test(expected = RectangleException.class)
-    public void baseRectangleTests_invalid_length_5() throws RectangleException {
-
-        // create a rect object with invalid lengths
         Rectangle rect = new Rectangle(7, -7);
     }
 }
