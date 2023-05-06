@@ -1,6 +1,9 @@
 plugins {
     id 'application'
+    id 'java'
+    id 'jacoco'
 }
+
 
 repositories {
     mavenCentral()
@@ -17,6 +20,15 @@ testing {
         }
     }
 }
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
 
 application {
     mainClass = 'MaxValueSimpleTest.App'
