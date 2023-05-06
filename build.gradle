@@ -4,7 +4,6 @@ plugins {
     id 'jacoco'
 }
 
-
 repositories {
     mavenCentral()
 }
@@ -36,7 +35,6 @@ jacocoTestReport {
         }))
     }
 }
-
 
 application {
     mainClass = 'RectangleTest.App'
