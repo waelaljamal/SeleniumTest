@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.*;
 import java.net.MalformedURLException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
+import java.util.Collections;
 
 public class BigAssignment {
 
@@ -13,6 +14,16 @@ public class BigAssignment {
 	public void setup() throws MalformedURLException {
 
 		ChromeOptions options = new ChromeOptions();
+		options.addArguments(
+				"--disable-blink-features=AutomationControlled",
+				"--disable-infobars",
+				"--no-sandbox",
+				"--disable-dev-shm-usage",
+				"--disable-web-security",
+				"--allow-running-insecure-content",
+				"--start-maximized");
+		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		options.setExperimentalOption("useAutomationExtension", false);
 		this.driver = new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), options);
 		this.driver.manage().window().maximize();
 	}
